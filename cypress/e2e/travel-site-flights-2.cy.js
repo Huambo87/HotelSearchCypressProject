@@ -27,7 +27,7 @@ describe('Flights Tab Test to Check Flights Functionality', () => {
 
     afterEach(() => {
         cy.log("after each")
-    })    
+    })
 
     it('Navigate to Flight Tab', () => {
         cy.get(origin_placeholder).should("be.visible")

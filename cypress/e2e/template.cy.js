@@ -7,11 +7,9 @@ describe("spec template", () => {
     })
 })
 
-describe ('Test_Suite', () => {
-    it('Test1', () => {
+describe('Test Suite', () => {
+    it('test1', () => {
 
-        
     })
-
 
 })
