@@ -7,6 +7,7 @@ describe('Car Tab Test to Check Car Functionality', () => {
     const dropoff_placeholder = '[name = "dropoff"]'
     const dropoff = '[data-drop = "2"]'
     const car_group_list = '[name = "car-group"]'
+    const driver_age_list = '[name = "driver-age"]'
 
     before(() => {
         cy.visit("http://localhost:3000")
@@ -43,6 +44,22 @@ describe('Car Tab Test to Check Car Functionality', () => {
         cy.get(car_group_list).select('Group 3', {force: true})
         cy.get('[title = "Group 3"]').should("be.visible")
         
+    })
+
+    it('Select Driver Age', () => {
+        cy.get(driver_age_list).should("be.visible")
+        cy.get(driver_age_list).select('23', {force: true})
+        cy.get('[title = "23"]').should("be.visible")
+
+        cy.get(driver_age_list).select('24', {force: true})
+        cy.get('[title = "24"]').should("be.visible")
+
+        cy.get(driver_age_list).select('25', {force: true})
+        cy.get('[title = "25"]').should("be.visible")
+
+        cy.get(driver_age_list).select('26', {force: true})
+        cy.get('[title = "26"]').should("be.visible")
+    
     })
 
 })
