@@ -24,8 +24,13 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('searchForPosition', (position_name) => {
+Cypress.Commands.add('searchForPosition', (position_name, location, company) => {
     cy.get('[placeholder = "position"]').type(position_name, {force: true})
+    cy.get('[placeholder = "location"]').type(location, {force: true})
+    cy.get('[placeholder = "company"]').type(company, {force: true})
+    // cy.get('[placeholder = "description"]').type(description, {force: true})
     cy.get('button').contains('search').click({force: true})
+    // cy.get('p').contains('Apple').should('be.visible')
+    // cy.get('span').contains('USA').should('be.visible')
 
 })
