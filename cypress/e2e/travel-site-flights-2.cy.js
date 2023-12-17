@@ -1,5 +1,7 @@
 ///<reference types = "Cypress"/>
 
+import { data } from '../fixtures/params.json'
+
 describe('Flights Tab Test to Check Flights Functionality', () => {
 
     const flights_tab = '[data-cy="Flight"]'
@@ -37,8 +39,16 @@ describe('Flights Tab Test to Check Flights Functionality', () => {
     })
 
     it('Populate Origin and Destination', () => {
-        cy.get(origin_placeholder).type("Toronto").invoke('val').should('eq', 'Toronto')
-        cy.get(destination_placeholder).type("Baku").invoke('val').should('eq', 'Baku')
+
+        data.forEach(element => {
+            cy.screenshot('Screenshot Test')
+            cy.get(origin_placeholder).clear().type(element.from).invoke('val').should('eq', element.from)
+            cy.get(destination_placeholder).clear().type(element.to).invoke('val').should('eq', element.to)
+
+        })
+
+        // cy.get(origin_placeholder).type(data[1].from).invoke('val').should('eq', data[1].from)
+        // cy.get(destination_placeholder).type(data[1].to).invoke('val').should('eq', data[1].to)
     })
 
     it('Populate Check-in/out', () => {

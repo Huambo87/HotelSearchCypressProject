@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "from": "Toronto",
+            "to": "Baku"
+        },
+        {
+            "from": "Prague",
+            "to": "Budapest"
+        },
+        {
+            "from": "Paris",
+            "to": "London"
+        },
+        {
+            "from": "№;%:?*()",
+            "to": "?*()_++"
+        },
+        {
+            "from": "   ",
+            "to": "   "
+        }
+    ]
+}
