@@ -41,7 +41,7 @@ describe('Flights Tab Test to Check Flights Functionality', () => {
     it('Populate Origin and Destination', () => {
 
         data.forEach(element => {
-            cy.screenshot('Screenshot Test')
+            // cy.screenshot('Screenshot Test')
             cy.get(origin_placeholder).clear().type(element.from).invoke('val').should('eq', element.from)
             cy.get(destination_placeholder).clear().type(element.to).invoke('val').should('eq', element.to)
 
